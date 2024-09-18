@@ -98,12 +98,12 @@ body{
 
             }
 
-        .sectionTarefas{
+        #sectionTarefas{
 
             display: flex;
             flex-direction: row;
     
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
     
             border: .1rem solid var(--color_transparente);
@@ -115,9 +115,14 @@ body{
     
         }
 
+            .tarefasAdicionadas{
+
+                margin: 0rem 0rem 0rem 5rem;
+            }
+
             .titleTarefa{
 
-                font-size: 1.6rem;
+                font-size: 2rem;
                 font-weight: 500;
                 color: #001747;
                 margin: 2rem 0rem 2rem 0rem;
@@ -135,13 +140,13 @@ body{
 
                 .EtiquetaAndData{
 
-                    font-size: 1.2rem;
+                    font-size: 1.3rem;
                     font-weight: 500;
                     color: var(--color_gray);
                     border: .1rem solid var(--color_gray);
                     border-radius: 1.6rem;
                     padding: .5rem 1rem .5rem 1rem;
-                    margin: 0rem;
+                    margin: 0rem 1rem 0rem -.1rem;
 
                 }
 
@@ -150,6 +155,7 @@ body{
                         border: 0;
                         padding: 0;
                         font-size: 1.4rem;
+                        margin: 0rem;
 
                     }
 
@@ -166,5 +172,7 @@ body{
                 font-size: 1.8rem;
                 font-weight: 500;
                 color: var(--color_white);
+
+                margin: 0rem 5rem 0rem 0rem;
 
             }
