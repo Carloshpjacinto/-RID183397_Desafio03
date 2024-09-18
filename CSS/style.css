@@ -4,6 +4,10 @@
 
     --color_azul_defaut: #2D70FD;
 
+    --color_gray: #B1BACB;
+
+    --color_transparente: #EEEEEE;
+
 }
 
 html{
@@ -60,18 +64,24 @@ body{
                 width: 25.4rem;
                 height: 4rem;
                 border-radius: .8rem;
-                border: .1rem solid #EEEEEE;
+                border: .1rem solid var(--color_transparente);
                 padding: .5rem 0rem .5rem 2rem;
 
             }
 
                 .sectionInputButton input::placeholder{
 
-                    color: #B1BACB;
+                    color: var(--color_gray);
                     font-size: 1.6rem;
                     font-weight: 400;
 
                 }
+
+                    .sectionInputButton input:focus{
+
+                        outline: none;
+
+                    }
 
             .sectionInputButton button{
 
@@ -84,6 +94,77 @@ body{
 
                 font-size: 1.8rem;
                 font-weight: 400;
+                color: var(--color_white);
+
+            }
+
+        .sectionTarefas{
+
+            display: flex;
+            flex-direction: row;
+    
+            justify-content: space-around;
+            align-items: center;
+    
+            border: .1rem solid var(--color_transparente);
+            border-radius: 1.6rem;
+            width: 100%;
+            height: 10.3rem;
+    
+            margin: 3rem 0rem 0rem 0rem;
+    
+        }
+
+            .titleTarefa{
+
+                font-size: 1.6rem;
+                font-weight: 500;
+                color: #001747;
+                margin: 2rem 0rem 2rem 0rem;
+                
+            }
+
+            .sectionEtiqueta{
+
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+                margin: 0rem 0rem 2rem 0rem;
+                
+            }
+
+                .EtiquetaAndData{
+
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                    color: var(--color_gray);
+                    border: .1rem solid var(--color_gray);
+                    border-radius: 1.6rem;
+                    padding: .5rem 1rem .5rem 1rem;
+                    margin: 0rem;
+
+                }
+
+                    .EtiquetaAndData:last-child{
+
+                        border: 0;
+                        padding: 0;
+                        font-size: 1.4rem;
+
+                    }
+
+            .botaoTarefa{
+
+                width: 12.1rem;
+                height: 4.4rem;
+
+                border-radius: .4rem;
+                border: .1rem solid var(--color_azul_defaut);
+
+                background-color: var(--color_azul_defaut);
+
+                font-size: 1.8rem;
+                font-weight: 500;
                 color: var(--color_white);
 
             }
