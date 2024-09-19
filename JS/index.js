@@ -1,52 +1,91 @@
 const adicionarTarefa = () => {
 
+    const time = Date.now();
+    const today = new Date(time);
+
+    const listaTarefas = document.getElementById("listaTarefas")
+
+    const topico = document.createElement("li")
+
     const nomeTarefa = document.getElementById("nomeTarefa")
 
-    const sectionTarefas = document.getElementById("sectionTarefas")
+    const inputEtiqueta = document.getElementById("inputEtiqueta")
+
+    const sectionTarefasAdicionadas = document.getElementById("sectionTarefasAdicionadas")
 
     const tarefasAdicionadas = document.createElement("div")
 
-    const titleTarefa = document.createElement("h3")
+    const tarefa = document.createElement("div")
+
+    const tituloTarefa = document.createElement("h3")
 
     const sectionEtiqueta = document.createElement("div")
 
-    const EtiquetaAndData1 = document.createElement("p")
+    const etiquetaData1 = document.createElement("p")
 
-    const EtiquetaAndData2 = document.createElement("p")
+    const etiquetaData2 = document.createElement("p")
 
-    const botaoTarefa = document.createElement("button")
+    const botaoTarefaConcluida = document.createElement("button")
 
-    titleTarefa.textContent = nomeTarefa.value
-
-    EtiquetaAndData1.textContent = "Frontend"
-
-    EtiquetaAndData2.textContent = "21/08/2024"
-
-    botaoTarefa.textContent = "Concluir"
+    const itemConcluido = document.createElement("h2")
 
     tarefasAdicionadas.className = "tarefasAdicionadas"
 
-    titleTarefa.className = "titleTarefa"
+    tarefa.className = "tarefa"
+
+    tituloTarefa.className = "tituloTarefa"
 
     sectionEtiqueta.className = "sectionEtiqueta"
 
-    EtiquetaAndData1.className = "EtiquetaAndData"
+    etiquetaData1.className = "etiquetaData"
 
-    EtiquetaAndData2.className = "EtiquetaAndData"
+    etiquetaData2.className = "etiquetaData"
 
-    botaoTarefa.className = "botaoTarefa"
+    botaoTarefaConcluida.className = "botaoTarefaConcluida"
 
-    tarefasAdicionadas.appendChild(titleTarefa)
+    itemConcluido.className = "itemConcluido"
 
-    sectionEtiqueta.appendChild(EtiquetaAndData1)
+    tituloTarefa.textContent = nomeTarefa.value
 
-    sectionEtiqueta.appendChild(EtiquetaAndData2)
+    etiquetaData1.textContent = inputEtiqueta.value
 
-    tarefasAdicionadas.appendChild(sectionEtiqueta)
+    etiquetaData2.textContent = "Criado em: " + today.toLocaleDateString()
 
-    sectionTarefas.appendChild(tarefasAdicionadas)
-    
-    sectionTarefas.appendChild(botaoTarefa)
+    botaoTarefaConcluida.textContent = "Concluir"
+
+    itemConcluido.textContent = "Foi"
+
+    sectionTarefasAdicionadas.appendChild(listaTarefas)
+
+    listaTarefas.appendChild(topico)
+
+    sectionTarefasAdicionadas.appendChild(tarefasAdicionadas)
+
+    tarefasAdicionadas.appendChild(tarefa)
+
+    tarefa.appendChild(tituloTarefa)
+
+    tarefa.appendChild(sectionEtiqueta)
+
+    sectionEtiqueta.appendChild(etiquetaData1)
+
+    sectionEtiqueta.appendChild(etiquetaData2)
+
+    tarefasAdicionadas.appendChild(itemConcluido)
+
+    tarefasAdicionadas.appendChild(botaoTarefaConcluida)
+
+    topico.appendChild(tarefasAdicionadas)
+
+    botaoTarefaConcluida.onclick = () => {
+
+        botaoTarefaConcluida.style = "display:none"
+
+        tituloTarefa.style = "text-decoration: line-through"
+
+        itemConcluido.style = "display:flex"
+
+    }
 
 }
 
@@ -55,4 +94,5 @@ window.onload = () => {
     const botaoAdicionarTarefa = document.getElementById("botaoAdicionarTarefa")
 
     botaoAdicionarTarefa.onclick = () => adicionarTarefa()
+
 }
