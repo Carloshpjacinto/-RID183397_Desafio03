@@ -48,18 +48,18 @@ body{
         }
 
 
-        .sectionInputButton{
+        #sectionInputButton{
 
             display: flex;
             flex-direction: row;
             justify-content: space-around;
             align-items: center;
-            margin: 3rem 0rem 0rem -.1rem;
+            margin: 3rem 0rem 3rem -.1rem;
             gap: 2.4rem;
 
         }
 
-            .sectionInputButton input{
+            #sectionInputButton input{
 
                 width: 25.4rem;
                 height: 4rem;
@@ -69,7 +69,7 @@ body{
 
             }
 
-                .sectionInputButton input::placeholder{
+                #sectionInputButton input::placeholder{
 
                     color: var(--color_gray);
                     font-size: 1.6rem;
@@ -77,13 +77,13 @@ body{
 
                 }
 
-                    .sectionInputButton input:focus{
+                    #sectionInputButton input:focus{
 
                         outline: none;
 
                     }
 
-            .sectionInputButton button{
+            #sectionInputButton button{
 
                 width: 4.5rem;
                 height: 4.3rem;
@@ -126,7 +126,8 @@ ul{
             align-items: center;
 
             border: .1rem solid var(--color_transparente);
-            margin: 1rem 0rem 0rem 0rem;
+
+            margin: 0rem 2rem 2rem 0rem;
 
             border-radius: 1.6rem;
 
@@ -134,12 +135,6 @@ ul{
             height: 10.3rem;
 
         }
-
-            .tarefasAdicionadas:first-child{
-
-                margin: 3rem 0rem 0rem 0rem;
-
-            }
 
             .tarefasAdicionadas .tituloTarefa{
 
@@ -183,6 +178,15 @@ ul{
 
                     }
 
+            
+            .itemConcluido{
+
+                 margin: 0rem 5rem 0rem 0rem;
+        
+                display: none;
+        
+            }
+
             .botaoTarefaConcluida{
 
                 font-size: 1.8rem;
@@ -199,13 +203,6 @@ ul{
 
             }
 
-            .itemConcluido{
-
-                margin: 0rem 5rem 0rem 0rem;
-
-                display: none;
-
-            }
 
 #contadorTarefasConcluidas{
 
@@ -217,14 +214,171 @@ ul{
 
     font-weight: 400;
 
-    margin: 2.5rem 0rem 0rem 0rem;
+    margin: .1rem 0rem 0rem 0rem;
 
-    padding: 2rem 0rem 0rem 0rem;
+    padding: 1.8rem 0rem 0rem 0rem;
 
     color: var(--color_gray);
 
     border-top: .1rem solid var(--color_transparente);
 
     width: 98%;
+
+}
+
+
+@media only screen and (max-width: 1023px){
+
+
+    body{
+
+        padding: .3rem .1rem 0rem .1rem;
+
+        margin: .1rem .1rem 3rem .2rem;
+   
+    }
+
+    main{
+
+        font-family: "Rubik", sans-serif;
+        color: var(--color_white);
+        width: 100%;
+        height: 100%;
+        border: .2rem solid #0000001a;
+        border-radius: 1.6rem;
+        padding: 0rem 1rem 1rem 1rem;
+
+    }
+
+        .titleBoardTarefa{
+
+            font-size: 3.2rem;
+            font-weight: 600;
+            color: #11175E;
+            margin: 2rem 0rem 0rem .4rem;
+
+        }
+
+        #sectionInputButton{
+
+            flex-direction: column;
+            align-items: center;
+            margin: 2rem 0rem 2.5rem 0rem;
+            gap: 1.5rem;
+
+        }
+
+            #sectionInputButton input{
+
+                width: 96%;
+
+                height: 4rem;
+                border-radius: .8rem;
+                border: .1rem solid var(--color_transparente);
+                padding: .5rem 0rem .5rem 2rem;
+
+            }
+
+            #sectionInputButton button{
+
+                width: 100%;
+
+                background-color: var(--color_azul_defaut);
+                border: .1rem;
+                border-radius: .4rem;
+
+                font-size: 1.8rem;
+                font-weight: 400;
+                color: var(--color_white);
+
+            }
+    ul{
+            
+        height: 100%;
+            
+    }
+
+        .tarefasAdicionadas{
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            border: .1rem solid var(--color_transparente);
+            margin: 0rem 0rem 1rem 0rem;
+
+            border-radius: 1.6rem;
+
+            width: 98%;
+            height: 20.4rem;
+
+        }
+
+            .tarefasAdicionadas .tituloTarefa{
+
+                font-size: 1.5rem;
+
+                margin: 2.5rem 0rem 0rem 2.5rem;
+
+            }
+
+            .tarefasAdicionadas .sectionEtiqueta{
+
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+            }
+
+                .sectionEtiqueta .etiquetaData{
+
+                    font-size: 1.1rem;
+
+                    margin: 1.5rem 0rem 0rem 3rem;
+
+                    border: .1rem solid var(--color_gray);
+                    border-radius: 1.6rem;
+
+                    padding: .5rem 1rem .5rem 1rem;
+
+                }
+
+                    .sectionEtiqueta .etiquetaData:last-child{
+
+                        margin: .4rem 0rem 0rem 2rem;
+
+                        border: 0rem;
+
+                        font-size: 1.3rem;
+
+                    }
+
+            .itemConcluido{
+
+                margin: 0rem 0rem 1.9rem 0rem;
+
+                align-items: center;
+               
+            }
+       
+            .botaoTarefaConcluida{
+       
+                font-size: 1.6rem;
+       
+                margin: 0rem 0rem 1.9rem 0rem;
+       
+            }
+
+    #contadorTarefasConcluidas{
+            
+        font-size: 1.5rem;
+            
+        margin: .1rem 0rem 0rem 0rem;
+            
+        padding: 1.8rem 0rem 0rem 0rem;
+            
+        width: 99%;
+            
+    }
 
 }
