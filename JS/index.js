@@ -1,3 +1,5 @@
+let tarefasTitulo= []
+
 const adicionarTarefa = () => {
 
     const time = Date.now();
@@ -27,7 +29,7 @@ const adicionarTarefa = () => {
 
     const botaoTarefaConcluida = document.createElement("button")
 
-    const itemConcluido = document.createElement("h2")
+    const itemConcluido = document.createElement("img")
 
     tarefasAdicionadas.className = "tarefasAdicionadas"
 
@@ -45,6 +47,8 @@ const adicionarTarefa = () => {
 
     itemConcluido.className = "itemConcluido"
 
+    itemConcluido.src = "itens/itemConcluido.svg"
+
     tituloTarefa.textContent = nomeTarefa.value
 
     etiquetaData1.textContent = inputEtiqueta.value
@@ -52,8 +56,6 @@ const adicionarTarefa = () => {
     etiquetaData2.textContent = "Criado em: " + today.toLocaleDateString()
 
     botaoTarefaConcluida.textContent = "Concluir"
-
-    itemConcluido.textContent = "Foi"
 
     sectionTarefasAdicionadas.appendChild(listaTarefas)
 
@@ -77,11 +79,23 @@ const adicionarTarefa = () => {
 
     topico.appendChild(tarefasAdicionadas)
 
+    document.getElementById("nomeTarefa").value = ""
+
+    document.getElementById("inputEtiqueta").value = ""
+
     botaoTarefaConcluida.onclick = () => {
+
+        const contadorTarefasConcluidas = document.getElementById("contadorTarefasConcluidas")
+
+        tarefasTitulo.push(1)
+
+        const contador = tarefasTitulo.length == 1 ? `${tarefasTitulo.length} Tarefa Concluída` : `${tarefasTitulo.length} Tarefas Concluídas`
+    
+        contadorTarefasConcluidas.textContent = contador
 
         botaoTarefaConcluida.style = "display:none"
 
-        tituloTarefa.style = "text-decoration: line-through"
+        tituloTarefa.style = "text-decoration: line-through #001747 .2rem"
 
         itemConcluido.style = "display:flex"
 
