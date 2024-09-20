@@ -196,6 +196,8 @@ ul{
                  margin: 0rem 5rem 0rem 0rem;
         
                 display: none;
+
+                width: 3.7rem;
         
             }
 
@@ -209,7 +211,7 @@ ul{
                 border: 0rem;
                 border-radius: .4rem;
 
-                margin: 0rem 4rem 0rem 0rem;
+                margin: 0rem 2rem 0rem 0rem;
 
                 padding: 1rem 3rem 3rem 3rem;
 
@@ -222,7 +224,7 @@ ul{
 
     justify-content: flex-end;
 
-    font-size: 1.6rem;
+    font-size: 1.7rem;
 
     font-weight: 400;
 
@@ -293,7 +295,7 @@ ul{
 
             #sectionInputButton button{
 
-                width: 100%;
+                width: 98%;
 
                 background-color: var(--color_azul_defaut);
                 border: .1rem;
@@ -322,7 +324,6 @@ ul{
 
         display: flex;
         flex-direction: column;
-        align-items: center;
 
         border: .1rem solid var(--color_transparente);
         margin: 0rem 0rem 1rem 0rem;
@@ -338,7 +339,7 @@ ul{
 
             font-size: 1.5rem;
 
-            margin: 2.5rem 0rem 0rem 2.5rem;
+            margin: 2rem 1.5rem 0rem 1.5rem;
 
         }
 
@@ -352,48 +353,49 @@ ul{
 
             .sectionEtiqueta .etiquetaData{
 
-                font-size: 1.1rem;
+                font-size: 1.2rem;
 
-                margin: 1.5rem 0rem 0rem 3rem;
+                margin: 1.5rem 1.5rem 0rem 1.5rem;
 
                 border: .1rem solid var(--color_gray);
                 border-radius: 1.6rem;
 
-                padding: .5rem 1rem .5rem 1rem;
+                padding: .5rem .8rem .5rem .8rem;
 
             }
 
                 .sectionEtiqueta .etiquetaData:last-child{
 
-                    margin: .4rem 0rem 0rem 2rem;
+                    margin: 1rem 1.5rem 0rem 1.5rem;
 
                     border: 0rem;
 
                     font-size: 1.3rem;
 
+                    padding: 0;
+
                 }
 
         .itemConcluido{
 
-            margin: 0rem 0rem 1.9rem 0rem;
+            margin: 1rem 0rem 3rem 0rem;
 
-            align-items: center;
-               
+
         }
        
         .botaoTarefaConcluida{
        
             font-size: 1.6rem;
        
-            margin: 0rem 0rem 1.9rem 0rem;
+            margin: 2rem 0rem 2rem 0rem;
        
         }
 
     #contadorTarefasConcluidas{
             
-        font-size: 1.5rem;
+        font-size: 1.6rem;
             
-        margin: .1rem 0rem 0rem 0rem;
+        margin: .1rem 0rem .5rem 0rem;
             
         padding: 1.8rem 0rem 0rem 0rem;
             
