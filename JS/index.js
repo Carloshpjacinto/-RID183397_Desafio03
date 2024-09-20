@@ -1,108 +1,204 @@
-let tarefasTitulo= []
+//Lista para contagem de tarefas concluidas
+let tarefasTitulo = []
 
-const adicionarTarefa = () => {
+//Pegando dia atual
+const getDay = () => {
 
     const time = Date.now();
     const today = new Date(time);
-    
+
+    return today
+
+}
+
+//Pegando a ul de dentro da section sectionTarefasAdicionadas
+const getList = () => {
+
     const listaTarefas = document.getElementById("listaTarefas")
-    
-    const topico = document.createElement("li")
+
+    return listaTarefas
+
+}
+
+//criando <li></li>
+const createLi = () => {
+
+    const li = document.createElement("li")
+
+    return li
+
+}
+
+//Pegando Input nomeTarefa de dentro da section sectionInputButton
+const getInputNomeTarefa = () => {
 
     const nomeTarefa = document.getElementById("nomeTarefa")
-    
+
+    return nomeTarefa
+
+}
+
+//Pegar input inputEtiqueta de dentro da section sectionInputButton
+const getInputEtiqueta = () => {
+
     const inputEtiqueta = document.getElementById("inputEtiqueta")
+
+    return inputEtiqueta
     
+}
+
+//Pegando section sectionTarefasAdicionadas
+const getsectionTarefasAdicionadas = () => {
+
     const sectionTarefasAdicionadas = document.getElementById("sectionTarefasAdicionadas")
+
+    return sectionTarefasAdicionadas
+
+}
+
+//Criando <div></div>
+const createDiv = (nomeDiv) => {
+
+    const div = document.createElement("div")
+
+    div.className = nomeDiv
+
+    return div
+
+}
+
+//criando <h3></h3>
+const createH3 = (classH3, tituloDaTarefa) => {
+
+    const h3 = document.createElement("h3")
+
+    h3.className = classH3
+
+    h3.textContent = tituloDaTarefa
+
+    return h3
+
+}
+
+
+//criando <p></p>
+const createP = (nomeClass, valorP) => {
+
+    const p = document.createElement("p")
+
+    p.className = nomeClass
+
+    p.textContent = valorP 
+
+    return p
+
+}
+
+//Criando <button></button>
+const createButton = (nomeClass, textContent) => {
+
+    const button = document.createElement("button")
+
+    button.className = nomeClass
+
+    button.textContent = textContent
+
+    return button
+
+}
+
+//Criando <img></img>
+const createImg = (nomeClass, src) => {
+
+    const img = document.createElement("img")
+
+    img.className = nomeClass
+
+    img.src = src
+
+    return img
+
+}
+
+//Função click botão adicionar
+const adicionarTarefa = () => {
     
-    const tarefasAdicionadas = document.createElement("div")
+    //variavel criando um <li>
+    const topico = createLi()
     
-    const tarefa = document.createElement("div")
+    //Variavel criando uma <div> já com nome atribuido na função
+    const tarefasAdicionadas = createDiv("tarefasAdicionadas")
     
-    const tituloTarefa = document.createElement("h3")
+    //Variavel criando uma <div> já com nome atribuido na função
+    const tarefa = createDiv("tarefa")
     
-    const sectionEtiqueta = document.createElement("div")
+    //Variavel criando um <h3> já com nome e valor text atribuidos na função
+    const tituloTarefa = createH3("tituloTarefa", getInputNomeTarefa().value)
     
-    const etiquetaData1 = document.createElement("p")
+    //Variavel criando uma <div> já com nome atribuido na função
+    const sectionEtiqueta = createDiv("sectionEtiqueta")
+
+    //Variavel criando um <button> já com nome da classe e valor text atribuidos na função
+    const botaoTarefaConcluida = createButton("botaoTarefaConcluida", "Concluir")
+
+    //Variavel criando um <img> já com nome e imagem atribuidos na função
+    const itemConcluido = createImg("itemConcluido", "itens/itemConcluido.svg")
+
+
+    //desabilitar textoListaVazia
+    document.getElementById("textoListaVazia").style = "display:none"
+
+
+    //Adições de elementos a section "sectionTarefasAdicionadas" com manipulação do DOM
+    getList().appendChild(topico)
+
+        getsectionTarefasAdicionadas().appendChild(tarefasAdicionadas)
+
+            tarefasAdicionadas.appendChild(tarefa)
+
+                tarefa.appendChild(tituloTarefa)
+
+                tarefa.appendChild(sectionEtiqueta)
+
+                    sectionEtiqueta.appendChild(createP("etiquetaData", getInputEtiqueta().value))
     
-    const etiquetaData2 = document.createElement("p")
+                    sectionEtiqueta.appendChild(createP("etiquetaData", "Criado em: " + getDay().toLocaleDateString()))
+
+
+            tarefasAdicionadas.appendChild(itemConcluido)
     
-    const botaoTarefaConcluida = document.createElement("button")
-    
-    const itemConcluido = document.createElement("img")
-    
-    tarefasAdicionadas.className = "tarefasAdicionadas"
-    
-    tarefa.className = "tarefa"
-    
-    tituloTarefa.className = "tituloTarefa"
-    
-    sectionEtiqueta.className = "sectionEtiqueta"
-    
-    etiquetaData1.className = "etiquetaData"
-    
-    etiquetaData2.className = "etiquetaData"
-    
-    botaoTarefaConcluida.className = "botaoTarefaConcluida"
-    
-    itemConcluido.className = "itemConcluido"
-    
-    itemConcluido.src = "itens/itemConcluido.svg"
-    
-    tituloTarefa.textContent = nomeTarefa.value
-    
-    etiquetaData1.textContent = inputEtiqueta.value
-    
-    etiquetaData2.textContent = "Criado em: " + today.toLocaleDateString()
-    
-    botaoTarefaConcluida.textContent = "Concluir"
-    
-    sectionTarefasAdicionadas.appendChild(listaTarefas)
-    
-    listaTarefas.appendChild(topico)
-    
-    sectionTarefasAdicionadas.appendChild(tarefasAdicionadas)
-    
-    tarefasAdicionadas.appendChild(tarefa)
-    
-    tarefa.appendChild(tituloTarefa)
-    
-    tarefa.appendChild(sectionEtiqueta)
-    
-    sectionEtiqueta.appendChild(etiquetaData1)
-    
-    sectionEtiqueta.appendChild(etiquetaData2)
-    
-    tarefasAdicionadas.appendChild(itemConcluido)
-    
-    tarefasAdicionadas.appendChild(botaoTarefaConcluida)
+            tarefasAdicionadas.appendChild(botaoTarefaConcluida)
     
     topico.appendChild(tarefasAdicionadas)
-    
+
+
+    //Limpando caixa de texto input depois de adicionar tarefa
     document.getElementById("nomeTarefa").value = ""
     
     document.getElementById("inputEtiqueta").value = ""
 
-    botaoTarefaConcluida.onclick = () => {
 
-        const contadorTarefasConcluidas = document.getElementById("contadorTarefasConcluidas")
-    
-        tarefasTitulo.push(1)
-    
-        const contador = tarefasTitulo.length == 1 ? `${tarefasTitulo.length} Tarefa Concluída` : `${tarefasTitulo.length} Tarefas Concluídas`
+    //Aplicação de função para evento de Onclick do botaoTarefaConcluida
+    botaoTarefaConcluida.onclick = () => {
         
-        contadorTarefasConcluidas.textContent = contador
+        tarefasTitulo.push(1)
+        
+        //contador das tarefas marcadas como conluídas
+        document.getElementById("contadorTarefasConcluidas").textContent = tarefasTitulo.length == 1 ? `${tarefasTitulo.length} Tarefa Concluída` : `${tarefasTitulo.length} Tarefas Concluídas`
     
+
+        //desabilita o botão "Concluido" das tarefas
         botaoTarefaConcluida.style = "display:none"
     
+        //risca o texto da tarefa concluída
         tituloTarefa.style = "text-decoration: line-through #001747 .2rem"
     
+        //habilita o item de marcação que sinaliza que a tarefa foi Concluida
         itemConcluido.style = "display:flex"
-    
+
     }
 
 }
-
 
 window.onload = () => {
 
