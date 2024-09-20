@@ -8,6 +8,8 @@
 
     --color_transparente: #EEEEEE;
 
+    --color_azul_escuro: #11175E;
+
 }
 
 html{
@@ -42,7 +44,7 @@ body{
 
             font-size: 5rem;
             font-weight: 600;
-            color: #11175E;
+            color: var(--color_azul_escuro);
             margin: 0;
 
         }
@@ -114,7 +116,7 @@ ul{
         font-size: 5rem;
         font-weight: 555;
 
-        color: #11175E;
+        color: var(--color_azul_escuro);
         text-align: center;
 
         margin: 10rem 0rem 0rem 0rem;
@@ -207,7 +209,7 @@ ul{
                 color: var(--color_white);
                 height: 3rem;
 
-                background-color: #2D70FD;
+                background-color: var(--color_azul_defaut);
                 border: 0rem;
                 border-radius: .4rem;
 
@@ -268,7 +270,7 @@ ul{
 
             font-size: 3.2rem;
             font-weight: 600;
-            color: #11175E;
+            color: var(--color_azul_escuro);
             margin: 2rem 0rem 0rem .4rem;
 
         }
